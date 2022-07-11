@@ -4,6 +4,8 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
 public class ConstructorTest extends DataForTests {
     /*
     Раздел «Конструктор»
@@ -11,6 +13,7 @@ public class ConstructorTest extends DataForTests {
            - «Булки»,
            - «Соусы»,
            - «Начинки».
+         Проверяем, что требуемые блоки видны
     */
     @Before
     public void setUp_() {
@@ -23,10 +26,10 @@ public class ConstructorTest extends DataForTests {
     @DisplayName("Раздел «Конструктор» переходы к разделу «Булки»")
     @Description("Test for https://stellarburgers.nomoreparties.site frontend")
     public void constructorBunsTest() {
-        burgersSite.clickButtonSauces();
+        burgersSite.clickButtonFilling();
         burgersSite.clickButtonBuns();
-        burgersSite.clickButtonBunFluorescent();
-        burgersSite.clickButtonCloseCard();
+        boolean blockVisible = ConstructorPage.bunSection.isDisplayed();
+        assertTrue("Block is invisible",blockVisible);
     }
 
     @Test
@@ -35,8 +38,8 @@ public class ConstructorTest extends DataForTests {
     @Description("Test for https://stellarburgers.nomoreparties.site frontend")
     public void constructorSaucesTest() {
         burgersSite.clickButtonSauces();
-        burgersSite.clickButtonSauceSpicyX();
-        burgersSite.clickButtonCloseCard();
+        boolean blockVisible = ConstructorPage.sauceSection.isDisplayed();
+        assertTrue("Block is invisible",blockVisible);
     }
 
     @Test
@@ -45,8 +48,8 @@ public class ConstructorTest extends DataForTests {
     @Description("Test for https://stellarburgers.nomoreparties.site frontend")
     public void constructorFillingTest() {
         burgersSite.clickButtonFilling();
-        burgersSite.clickButtonProtostomia();
-        burgersSite.clickButtonCloseCard();
+        boolean blockVisible = ConstructorPage.fillingSection.isDisplayed();
+        assertTrue("Block is invisible",blockVisible);
     }
 
 }

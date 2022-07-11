@@ -3,6 +3,10 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
+import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.WebDriverConditions.url;
+import static org.junit.Assert.assertTrue;
+
 public class UserLoginTest extends DataForTests {
     /*
         Проверь:
@@ -21,6 +25,8 @@ public class UserLoginTest extends DataForTests {
         burgersSite.loginUser(userEmail, userPassword);
         burgersSite.buttonEnterOnDisplay();
         burgersSite.buttonPlaceAnOrderOnDisplay();
+        webdriver().shouldHave(url("https://stellarburgers.nomoreparties.site/"));
+        assertTrue("Button invisible", burgersSite.buttonPlaceAnOrderOnDisplay());
     }
 
     @Test
@@ -32,6 +38,8 @@ public class UserLoginTest extends DataForTests {
         burgersSite.loginUser(userEmail, userPassword);
         burgersSite.buttonEnterOnDisplay();
         burgersSite.buttonPlaceAnOrderOnDisplay();
+        webdriver().shouldHave(url("https://stellarburgers.nomoreparties.site/"));
+        assertTrue("Button invisible", burgersSite.buttonPlaceAnOrderOnDisplay());
     }
 
     @Test
@@ -45,6 +53,8 @@ public class UserLoginTest extends DataForTests {
         burgersSite.loginUser(userEmail, userPassword);
         burgersSite.buttonEnterOnDisplay();
         burgersSite.buttonPlaceAnOrderOnDisplay();
+        webdriver().shouldHave(url("https://stellarburgers.nomoreparties.site/"));
+        assertTrue("Button invisible", burgersSite.buttonPlaceAnOrderOnDisplay());
     }
 
     @Test
@@ -52,13 +62,14 @@ public class UserLoginTest extends DataForTests {
     @DisplayName("Вход через кнопку в форме восстановления пароля")
     @Description("Test for https://stellarburgers.nomoreparties.site frontend")
     public void loginViaPasswordRecoveryFormTest() {
-
         burgersSite.clickButtonPersonalAccount();
         burgersSite.clickLinkPasswordRecovery();
         burgersSite.clickLinkLoginFromRecovery();
         burgersSite.loginUser(userEmail, userPassword);
         burgersSite.buttonEnterOnDisplay();
         burgersSite.buttonPlaceAnOrderOnDisplay();
+        webdriver().shouldHave(url("https://stellarburgers.nomoreparties.site/"));
+        assertTrue("Button invisible", burgersSite.buttonPlaceAnOrderOnDisplay());
     }
 
 }

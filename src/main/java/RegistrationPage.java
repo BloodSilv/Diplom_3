@@ -54,7 +54,7 @@ class RegistrationPage extends PasswordRecoveryPage {
         return messageExistUser.shouldBe(Condition.visible).exists();
     }
 
-    Boolean messageWrongPasswordOnDisplay(){
+    Boolean checkWrongPasswordMessage(){
         return messageWrongPassword.shouldBe(Condition.visible).exists();
     }
 

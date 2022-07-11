@@ -30,6 +30,6 @@ public class UserRegistrationTest extends DataForTests {
         burgersSite.clickLinkRegistration();
         userPassword = "12345";
         burgersSite.registrationNewUser(userName, userEmail, userPassword);
-        burgersSite.messageWrongPasswordOnDisplay();
+        burgersSite.checkWrongPasswordMessage();
     }
 }

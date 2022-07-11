@@ -18,7 +18,7 @@ public class CreateDeleteUser extends BaseUrls {
         this.userEmail = email;
     }
 
-    public JSONObject getJson(){
+    public JSONObject getJsonUserData(){
         return new JSONObject()
                 .put("email", this.userEmail)
                 .put("password", this.userPassword)
@@ -27,7 +27,7 @@ public class CreateDeleteUser extends BaseUrls {
 
     @Step("Create user")
     void getResponse() {
-        JSONObject json = getJson();
+        JSONObject json = getJsonUserData();
         Allure.attachment("New user data: ", String.valueOf(json));
         Response response = given()
                 .spec(BaseUrls.getBaseSpec())

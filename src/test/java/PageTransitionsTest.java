@@ -3,6 +3,9 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
+import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.WebDriverConditions.url;
+
 public class PageTransitionsTest extends DataForTests {
     /*
     Проверь:
@@ -14,7 +17,7 @@ public class PageTransitionsTest extends DataForTests {
             - Проверь выход по кнопке «Выйти» в личном кабинете.
 */
     @Test
-    @Feature("Переход в личный кабинет по клику на «Личный кабинет», затем клик на на «Конструктор»")
+    @Feature("Переход в личный кабинет по клику на «Личный кабинет», затем клик на «Конструктор»")
     @DisplayName("Переход в личный кабинет по клику на «Личный кабинет», затем клик на на «Конструктор»")
     @Description("Test for https://stellarburgers.nomoreparties.site frontend")
     public void transitionToConstructorTest() {
@@ -23,6 +26,7 @@ public class PageTransitionsTest extends DataForTests {
         burgersSite.buttonPlaceAnOrderOnDisplay();
         burgersSite.clickButtonPersonalAccount();
         burgersSite.clickConstructor();
+        webdriver().shouldHave(url("https://stellarburgers.nomoreparties.site/"));
     }
 
     @Test
@@ -35,6 +39,7 @@ public class PageTransitionsTest extends DataForTests {
         burgersSite.buttonPlaceAnOrderOnDisplay();
         burgersSite.clickButtonPersonalAccount();
         burgersSite.clickLinkMainPage();
+        webdriver().shouldHave(url("https://stellarburgers.nomoreparties.site/"));
     }
 
     @Test
@@ -47,5 +52,6 @@ public class PageTransitionsTest extends DataForTests {
         burgersSite.buttonPlaceAnOrderOnDisplay();
         burgersSite.clickButtonPersonalAccount();
         burgersSite.clickButtonExit();
+        webdriver().shouldHave(url("https://stellarburgers.nomoreparties.site/login"));
     }
 }
