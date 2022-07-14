@@ -28,8 +28,8 @@ public class ConstructorTest extends DataForTests {
     public void constructorBunsTest() {
         burgersSite.clickButtonFilling();
         burgersSite.clickButtonBuns();
-        boolean blockVisible = ConstructorPage.bunSection.isDisplayed();
-        assertTrue("Block is invisible",blockVisible);
+        boolean isBunsTabActive = ConstructorPage.isBunsTabActive();
+        assertTrue("Нет переключения на раздел Булки при клике на таб Булки", isBunsTabActive);
     }
 
     @Test
@@ -38,8 +38,8 @@ public class ConstructorTest extends DataForTests {
     @Description("Test for https://stellarburgers.nomoreparties.site frontend")
     public void constructorSaucesTest() {
         burgersSite.clickButtonSauces();
-        boolean blockVisible = ConstructorPage.sauceSection.isDisplayed();
-        assertTrue("Block is invisible",blockVisible);
+        boolean isSaucesTabActive = ConstructorPage.isSaucesTabActive();
+        assertTrue("Нет переключения на раздел Булки при клике на таб Булки", isSaucesTabActive);
     }
 
     @Test
@@ -48,8 +48,8 @@ public class ConstructorTest extends DataForTests {
     @Description("Test for https://stellarburgers.nomoreparties.site frontend")
     public void constructorFillingTest() {
         burgersSite.clickButtonFilling();
-        boolean blockVisible = ConstructorPage.fillingSection.isDisplayed();
-        assertTrue("Block is invisible",blockVisible);
+        boolean isFillingsTabActive = ConstructorPage.isFillingsTabActive();
+        assertTrue("Нет переключения на раздел Начинки при клике на таб Начинки", isFillingsTabActive);
     }
 
 }

@@ -14,11 +14,11 @@ class LoginPage extends RegistrationPage {
     SelenideElement buttonEnter;
 
     // Поле почта пользователя
-    @FindBy(how = How.XPATH, using = "//div/main/div/form/fieldset[1]/div/div/input")
+    @FindBy(how = How.XPATH, using = ".//input[@name='name']")
     SelenideElement fieldEmail_;
 
     // Поле пароль пользователя
-    @FindBy(how = How.XPATH, using = "//div/main/div/form/fieldset[2]/div/div/input")
+    @FindBy(how = How.XPATH, using = ".//input[@name='Пароль']")
     SelenideElement fieldPassword_;
 
     // Ссылка на страницу восстановления пароля

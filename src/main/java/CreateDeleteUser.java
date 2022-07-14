@@ -6,9 +6,9 @@ import org.json.JSONObject;
 import static io.restassured.RestAssured.given;
 
 public class CreateDeleteUser extends BaseUrls {
-    private String userPassword;
-    private String userEmail;
-    private String userLogin;
+    private final String userPassword;
+    private final String userEmail;
+    private final String userLogin;
     private String accessToken;
     private String refreshToken;
 
@@ -71,5 +71,4 @@ public class CreateDeleteUser extends BaseUrls {
                     .statusCode(202);
         }
     }
-
 }

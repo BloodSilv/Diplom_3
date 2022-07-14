@@ -9,15 +9,15 @@ class RegistrationPage extends PasswordRecoveryPage {
     SelenideElement buttonRegistration;
 
     // Поле имя пользователя
-    @FindBy(how = How.XPATH, using = "//div/main/div/form/fieldset[1]/div/div/input")
+    @FindBy(how = How.XPATH, using = ".//fieldset[1]//input")
     SelenideElement fieldName;
 
     // Поле почта пользователя
-    @FindBy(how = How.XPATH, using = "//div/main/div/form/fieldset[2]/div/div/input")
+    @FindBy(how = How.XPATH, using = ".//fieldset[2]//input")
     SelenideElement fieldEmail;
 
     // Поле пароль пользователя
-    @FindBy(how = How.XPATH, using = "//div/main/div/form/fieldset[3]/div/div/input")
+    @FindBy(how = How.XPATH, using = ".//fieldset[3]//input")
     SelenideElement fieldPassword;
 
     // Сообщение о существующем пользователе

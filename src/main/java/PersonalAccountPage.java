@@ -15,9 +15,4 @@ class PersonalAccountPage extends LoginPage {
         System.out.println(buttonExit.isDisplayed());
         buttonExit.shouldBe(Condition.visible).click();
     }
-
-    boolean checkButtonExitOnDisplay(){
-        return buttonExit.shouldBe(Condition.visible).exists();
-    }
-
 }
